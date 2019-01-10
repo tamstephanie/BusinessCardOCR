@@ -14,8 +14,8 @@ class BusinessCardParser:
         # Check business card for the necessary info
         for line in info:
             # Search card for person's name
-            if not any(value in line for value in ("Software", "Engineer", "Developer", "Technologies", "Ltd")):
-                if(re.search("^[A-Z][a-z]+\s[A-Z][a-z]+", line)):
+            if not any(value in line for value in ("Software", "Engineer", "Developer", "Technologies", "Ltd", "@", ",")):
+                if(re.search("^[A-Z][a-z]+(-[A-Z][a-z]+)?\s[A-Z][a-z]+", line)):
                     name = line
                     
             # Search for phone number & just get the numbers
